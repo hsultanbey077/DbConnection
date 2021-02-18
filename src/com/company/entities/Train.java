@@ -4,7 +4,7 @@ public class Train {
     private int id;
     private String name;
     private int capacity;
-    public Train(){
+    public Train(Train train){
 
     }
     public Train(String name, int capacity){

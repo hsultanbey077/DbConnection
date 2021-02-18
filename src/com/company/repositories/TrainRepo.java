@@ -21,9 +21,10 @@ public class TrainRepo implements ITrainRepo {
         Connection con = null;
         try {
             con = db.getConnection();
-            String sql = "INSERT INTO trains(name,capacity) VALUES (?,?)";
+            String sql = "INSERT INTO trains(name,capacity) VALUES (?,?,?)";
             PreparedStatement st = con.prepareStatement(sql);
 
+            st.setInt(1, train.getId());
             st.setString(1, train.getName());
             st.setInt(2, train.getCapacity());
 
